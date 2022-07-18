@@ -4,15 +4,17 @@
 
 export const environment = {
   production: false,
-  firebaseConfig :{
-    apiKey: "AIzaSyDa3ay8xSWiA-FaOHY3VpIEQ7IAsH9TpGE",
-    authDomain: "woodmart-database.firebaseapp.com",
-    projectId: "woodmart-database",
-    storageBucket: "woodmart-database.appspot.com",
-    messagingSenderId: "1066553658614",
-    appId: "1:1066553658614:web:420aca8e7997f6f8a6f0d7"
+ firebaseConfig : {
+    apiKey: "AIzaSyC5-x8zqKRF8qezw5sMjXY45byLMtKV2rw",
+    authDomain: "woodmart-project-f9dd2.firebaseapp.com",
+    databaseURL: "https://woodmart-project-f9dd2-default-rtdb.firebaseio.com",
+    projectId: "woodmart-project-f9dd2",
+    storageBucket: "woodmart-project-f9dd2.appspot.com",
+    messagingSenderId: "663965779727",
+    appId: "1:663965779727:web:f6f6b8d43bbdbb4ae2207a",
+    measurementId: "G-KP32P40Q4L"
   }
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

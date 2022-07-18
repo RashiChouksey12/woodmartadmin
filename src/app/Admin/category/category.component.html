@@ -51,11 +51,16 @@
                                             <td>Date</td>
                                             <td>Status</td>
                                             <td>Action</td>
+                                            <!-- <td>#</td>
+                                            <td>Category</td> -->
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><input type="radio"></td>
+                                        <!-- <tr *ngFor="let student of Product; let i = index">
+                                            <th>{{i + 1}}</th>
+                                            <td>{{Product.Category}}</td>
+                                            <td><span (click)="removeStudent(student)" class="btn btn-danger">Delete</span></td> -->
+                                          <tr><td><input type="radio"></td>
                                             <td>Footware</td>
                                             <td>
                                                20
@@ -78,7 +83,7 @@
                                                 <div><i class='fa fa-edit custom-font-family'></i></div>
                                                 <div><i class='fa fa-eraser custom-font-family'></i></div>
 
-                                             </td>                   
+                                             </td>                  
                                         </tr>
                                        
                                     </tbody>
@@ -101,14 +106,14 @@
                                           </div>
                                       </form> -->
                                 
-                                      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                                      <form #categoryForm="ngForm"  (ngSubmit)="createCategory(categoryForm.value)">
                                         <div class="row">
                                       <div class="col-md-6">
                                           <label for="inputClass" class="form-label">Category</label>
-                                          <input type="text" formControlName="firstName" class="form-control" id="first-name">
+                                          <input type="text" name="categoryName" class="form-control" id="categoryName" placeholder="categoryName" value="categoryName" ngModel>
                                         </div>
                                         <div class="col-md-6">
-                                          <button type="submit" class="btn btn-primary catbtn" >Save changes</button>
+                                          <button type="submit" class="btn btn-primary catbtn"  >Save changes</button>
                                         </div>
                                       </div>
                                     </form>

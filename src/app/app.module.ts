@@ -5,7 +5,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule} from '@angular/common/http'
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { CategoryComponent } from './Admin/category/category.component';
 import { ListingComponent } from './Admin/listing/listing.component';
@@ -15,16 +15,11 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule, } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { provideFirebaseApp ,initializeApp} from '@angular/fire/app';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 
 
-// const config = {
-//   apiKey: "AIzaSyDa3ay8xSWiA-FaOHY3VpIEQ7IAsH9TpGE",
-//   authDomain: "woodmart-database.firebaseapp.com",
-//   projectId: "woodmart-database",
-//   storageBucket: "woodmart-database.appspot.com",
-//   messagingSenderId: "1066553658614",
-//   appId: "1:1066553658614:web:420aca8e7997f6f8a6f0d7"
-// };
+
 
 @NgModule({
   declarations: [
@@ -42,12 +37,17 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FormsModule,
+    FormsModule,
     NgbModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireStorageModule ,// storage
+    HttpClientModule,
+    provideDatabase(()=>getDatabase()),
+    provideFirebaseApp(()=>initializeApp(environment.firebaseConfig))
+ 
+
    
     
     
